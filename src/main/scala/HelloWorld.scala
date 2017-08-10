@@ -1,5 +1,18 @@
 object HelloWorld {
   def countWords(line: List[String]): Map[String, Int] = {
-    Map("test" -> 1)
+    val words = List("apple banana", "orange apple mango", "kiwi papaya orange", "mango orange muscat apple")
+
+    var countWord = Map[String, Int]()
+    for (phrase: String <- words) {
+      for (word: String <- phrase.split(' ')) {
+        if (countWord.isDefinedAt(word)) {
+          countWord = countWord.updated(word, countWord(word) + 1)
+        } else {
+          countWord = countWord + (word -> 1)
+        }
+      }
+    }
+
+    countWord
   }
 }

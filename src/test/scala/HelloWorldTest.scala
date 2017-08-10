@@ -8,6 +8,3 @@ class HelloWorldTest extends FunSpec with Matchers {
     }
   }
 }
-
-//
-
